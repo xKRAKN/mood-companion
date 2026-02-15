@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Verse App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>I am feeling...</h2>
+    <div class="button-group">
+        <button class="sad" onclick="getVerse('sad')">Sad</button>
+        <button class="angry" onclick="getVerse('angry')">Angry</button>
+        <button class="thankful" onclick="getVerse('thankful')">Thankful</button>
+        <button class="scared" onclick="getVerse('scared')">Scared</button>
+        <button class="happy" onclick="getVerse('happy')">Happy</button>
+    </div>
+
+    <div id="display-area">
+        <p id="verse-text">Click a button for a word of encouragement.</p>
+        <div id="verse-ref"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
