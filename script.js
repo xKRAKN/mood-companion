@@ -1,94 +1,145 @@
-// 1. The Full Verse Database (20 per category)
+// 1. Personalized Life-Reminder Database
 const bibleVerses = {
     sad: [
-        { text: "The Lord is close to the brokenhearted and saves those who are crushed in spirit.", ref: "Psalm 34:18" },
-        { text: "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain.", ref: "Revelation 21:4" },
-        { text: "Blessed are those who mourn, for they will be comforted.", ref: "Matthew 5:4" },
-        { text: "Cast all your anxiety on him because he cares for you.", ref: "1 Peter 5:7" },
-        { text: "The Lord is my shepherd, I shall not want.", ref: "Psalm 23:1" },
-        { text: "He heals the brokenhearted and binds up their wounds.", ref: "Psalm 147:3" },
-        { text: "Why, my soul, are you downcast? Why so disturbed within me? Put your hope in God.", ref: "Psalm 42:11" },
-        { text: "Even though I walk through the darkest valley, I will fear no evil, for you are with me.", ref: "Psalm 23:4" },
-        { text: "The God of all grace... will himself restore you and make you strong, firm and steadfast.", ref: "1 Peter 5:10" },
-        { text: "My help comes from the Lord, the Maker of heaven and earth.", ref: "Psalm 121:2" },
-        { text: "The Lord is a refuge for the oppressed, a stronghold in times of trouble.", ref: "Psalm 9:9" },
-        { text: "Come to me, all you who are weary and burdened, and I will give you rest.", ref: "Matthew 11:28" },
-        { text: "You keep track of all my sorrows. You have collected all my tears in your bottle.", ref: "Psalm 56:8" },
-        { text: "The Lord sustains them on their sickbed and restores them from their bed of illness.", ref: "Psalm 41:3" },
-        { text: "Though he brings grief, he will show compassion, so great is his unfailing love.", ref: "Lamentations 3:32" },
-        { text: "Those who sow with tears will reap with songs of joy.", ref: "Psalm 126:5" },
-        { text: "Being confident of this, that he who began a good work in you will carry it on to completion.", ref: "Philippians 1:6" },
-        { text: "Record my misery; list my tears on your scroll — are they not in your record?", ref: "Psalm 56:8" },
-        { text: "For his anger lasts only a moment, but his favor lasts a lifetime; weeping may stay for the night, but rejoicing comes in the morning.", ref: "Psalm 30:5" },
-        { text: "Peace I leave with you; my peace I give you. I do not give to you as the world gives.", ref: "John 14:27" }
+        { text: "He heals the brokenhearted and binds up their wounds. You are never alone in your pain.", ref: "Psalm 147:3" },
+        { text: "Your current situation is not your final destination. Better days are coming.", ref: "Jeremiah 29:11" },
+        { text: "You are allowed to be both a masterpiece and a work in progress.", ref: "Philippians 1:6" },
+        { text: "The Lord is close to you when your heart is heavy. Let Him carry the weight today.", ref: "Psalm 34:18" },
+        { text: "He will wipe every tear from your eyes. Your sorrow is seen and valued.", ref: "Revelation 21:4" },
+        { text: "When you feel overwhelmed, remember that His grace is sufficient for you.", ref: "2 Corinthians 12:9" },
+        { text: "You are worth more than you can imagine. Don't let sadness tell you otherwise.", ref: "Luke 12:7" },
+        { text: "Tears are a language God understands. He is listening to your heart.", ref: "Psalm 56:8" },
+        { text: "Rest your soul today. You don't have to have it all figured out right now.", ref: "Matthew 11:28" },
+        { text: "Even in the dark, His light is shining on your path. Trust the next step.", ref: "Psalm 119:105" },
+        { text: "You are stronger than the things that are trying to break you.", ref: "Isaiah 40:31" },
+        { text: "Peace is not the absence of trouble, but the presence of God.", ref: "John 14:27" },
+        { text: "Let your heart take courage. You are being held through this storm.", ref: "Psalm 27:14" },
+        { text: "He restores your soul. Allow yourself time to heal.", ref: "Psalm 23:3" },
+        { text: "Your life has a purpose that far outweighs this temporary moment of sadness.", ref: "Romans 8:28" },
+        { text: "The sun will rise again, and His mercies are new every single morning.", ref: "Lamentations 3:22-23" },
+        { text: "You are deeply loved, exactly as you are, in this very moment.", ref: "Romans 8:38-39" },
+        { text: "Cast your cares on Him. He isn't tired of hearing from you.", ref: "1 Peter 5:7" },
+        { text: "Your value is not defined by how you feel today.", ref: "Genesis 1:27" },
+        { text: "He gives power to the weak and strength to the powerless. Lean on Him.", ref: "Isaiah 40:29" }
     ],
     angry: [
-        { text: "A gentle answer turns away wrath, but a harsh word stirs up anger.", ref: "Proverbs 15:1" },
-        { text: "In your anger do not sin: Do not let the sun go down while you are still angry.", ref: "Ephesians 4:26" },
-        { text: "Better a patient person than a warrior, one with self-control than one who takes a city.", ref: "Proverbs 16:32" },
-        { text: "Everyone should be quick to listen, slow to speak and slow to become angry.", ref: "James 1:19" },
-        { text: "Do not be quickly provoked in your spirit, for anger resides in the lap of fools.", ref: "Ecclesiastes 7:9" },
-        { text: "Fools give full vent to their rage, but the wise bring calm in the end.", ref: "Proverbs 29:11" },
-        { text: "Get rid of all bitterness, rage and anger, brawling and slander.", ref: "Ephesians 4:31" },
-        { text: "Starting a quarrel is like breaching a dam; so drop the matter before a dispute breaks out.", ref: "Proverbs 17:14" },
-        { text: "Refrain from anger and turn from wrath; do not fret—it leads only to evil.", ref: "Psalm 37:8" },
-        { text: "A hot-tempered person stirs up conflict, but the one who is patient calms a quarrel.", ref: "Proverbs 15:18" },
-        { text: "Do not associate with a man given to anger; or go with a hot-tempered man.", ref: "Proverbs 22:24" },
-        { text: "The discretion of a man makes him slow to anger, and his glory is to overlook a transgression.", ref: "Proverbs 19:11" },
-        { text: "Sensible people control their temper; they earn respect by overlooking wrongs.", ref: "Proverbs 19:11" },
-        { text: "Let your conversation be always full of grace, seasoned with salt.", ref: "Colossians 4:6" },
-        { text: "But now you must also rid yourselves of all such things as these: anger, rage, malice, slander.", ref: "Colossians 3:8" },
-        { text: "Do not be overcome by evil, but overcome evil with good.", ref: "Romans 12:21" },
-        { text: "Blessed are the peacemakers, for they will be called children of God.", ref: "Matthew 5:9" },
-        { text: "If it is possible, as far as it depends on you, live at peace with everyone.", ref: "Romans 12:18" },
-        { text: "Do not repay anyone evil for evil. Be careful to do what is right in the eyes of everyone.", ref: "Romans 12:17" },
-        { text: "The Lord is compassionate and gracious, slow to anger, abounding in love.", ref: "Psalm 103:8" }
+        { text: "Don't let your anger steal your peace. A gentle heart is your greatest strength.", ref: "Proverbs 15:1" },
+        { text: "Protect your heart today. Don't let bitterness take root in your beautiful soul.", ref: "Ephesians 4:31" },
+        { text: "You have the power to stay calm even when things feel chaotic.", ref: "Proverbs 29:11" },
+        { text: "Let go of the things you cannot control. Your peace is worth more than being right.", ref: "James 1:19-20" },
+        { text: "Inner peace begins the moment you choose not to allow another person to control your emotions.", ref: "Romans 12:18" },
+        { text: "Be patient with yourself and others. Everyone is fighting a battle you know nothing about.", ref: "Colossians 3:13" },
+        { text: "Anger is a wind which blows out the lamp of the mind. Choose clarity instead.", ref: "Proverbs 14:29" },
+        { text: "Don't let the sun go down on your anger. Sleep in peace tonight.", ref: "Ephesians 4:26" },
+        { text: "Kindness is a gift you give yourself. Choose to respond with grace.", ref: "Proverbs 11:17" },
+        { text: "The best revenge is to be unlike him who performed the injury.", ref: "Romans 12:19" },
+        { text: "Breathe. God is the judge, you don't have to carry the gavel.", ref: "Psalm 37:8" },
+        { text: "Your character is defined by how you treat people you are angry with.", ref: "Colossians 4:6" },
+        { text: "A quiet spirit is of great worth. Don't let the noise turn into rage.", ref: "1 Peter 3:4" },
+        { text: "Overcome evil with good. It’s the hardest but most rewarding path.", ref: "Romans 12:21" },
+        { text: "Forgiveness is the key that sets you free, not the person who hurt you.", ref: "Matthew 6:14" },
+        { text: "Control your temper or it will control you. You are a person of dignity.", ref: "Proverbs 16:32" },
+        { text: "The Lord will fight for you; you only need to be still.", ref: "Exodus 14:14" },
+        { text: "Your words have power. Use them to build up, even when you're hurt.", ref: "Proverbs 12:18" },
+        { text: "Bitterness is like drinking poison and waiting for the other person to die.", ref: "Hebrews 12:15" },
+        { text: "God is slow to anger and rich in love. Try to mirror His heart today.", ref: "Psalm 103:8" }
     ],
     thankful: [
-        { text: "Give thanks to the Lord, for he is good; his love endures forever.", ref: "1 Chronicles 16:34" },
-        { text: "Give thanks in all circumstances; for this is God’s will for you in Christ Jesus.", ref: "1 Thessalonians 5:18" },
-        { text: "Enter his gates with thanksgiving and his courts with praise.", ref: "Psalm 100:4" },
-        { text: "This is the day the Lord has made; let us rejoice and be glad in it.", ref: "Psalm 118:24" },
-        { text: "Every good and perfect gift is from above, coming down from the Father.", ref: "James 1:17" },
-        { text: "Let the peace of Christ rule in your hearts... And be thankful.", ref: "Colossians 3:15" },
-        { text: "I will praise God’s name in song and glorify him with thanksgiving.", ref: "Psalm 69:30" },
-        { text: "Oh, that men would give thanks to the Lord for His goodness.", ref: "Psalm 107:8" },
-        { text: "Praise the Lord, my soul, and forget not all his benefits.", ref: "Psalm 103:2" },
-        { text: "I thank my God every time I remember you.", ref: "Philippians 1:3" },
-        { text: "Devote yourselves to prayer, being watchful and thankful.", ref: "Colossians 4:2" },
-        { text: "I will give thanks to you, Lord, with all my heart; I will tell of all your wonderful deeds.", ref: "Psalm 9:1" },
-        { text: "Rooted and built up in him, strengthened in the faith as you were taught, and overflowing with thankfulness.", ref: "Colossians 2:7" },
-        { text: "Let us come before him with thanksgiving and extol him with music and song.", ref: "Psalm 95:2" },
-        { text: "Thanks be to God for his indescribable gift!", ref: "2 Corinthians 9:15" },
-        { text: "And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father.", ref: "Colossians 3:17" },
-        { text: "I will give to the Lord the thanks due to his righteousness.", ref: "Psalm 7:17" },
-        { text: "Giving thanks always and for everything to God the Father in the name of our Lord Jesus Christ.", ref: "Ephesians 5:20" },
-        { text: "You are my God, and I will praise you; you are my God, and I will exalt you.", ref: "Psalm 118:28" },
-        { text: "The Lord is my strength and my shield; my heart trusts in him, and he helps me.", ref: "Psalm 28:7" }
+        { text: "Gratitude turns what we have into enough. You are truly blessed.", ref: "1 Thessalonians 5:18" },
+        { text: "Look around you today. Every small joy is a gift meant just for you.", ref: "James 1:17" },
+        { text: "Your life is a beautiful story of grace. Be thankful for how far you've come.", ref: "Psalm 126:3" },
+        { text: "Start your day with a grateful heart and watch the world change around you.", ref: "Psalm 100:4" },
+        { text: "There is always, always something to be thankful for.", ref: "Psalm 107:1" },
+        { text: "Thank God for the doors He closed just as much as the ones He opened.", ref: "Proverbs 3:5-6" },
+        { text: "A thankful heart is a magnet for miracles.", ref: "Psalm 103:2" },
+        { text: "Count your blessings, not your problems. You have a beautiful future.", ref: "Philippians 4:8" },
+        { text: "Be thankful for the struggles that made you the strong woman you are today.", ref: "Romans 5:3-5" },
+        { text: "God’s love for you is the one thing that will never change. That is enough.", ref: "Psalm 136:1" },
+        { text: "You are a gift to the people around you. Be thankful for your unique light.", ref: "Matthew 5:14" },
+        { text: "Celebrate the small wins today. They lead to big victories.", ref: "Zechariah 4:10" },
+        { text: "Peace starts with a 'Thank You.'", ref: "Philippians 4:6-7" },
+        { text: "Your life is full of 'hidden' blessings. May your eyes stay open to them.", ref: "Psalm 31:19" },
+        { text: "Even in the waiting, there is something to be grateful for.", ref: "Lamentations 3:25" },
+        { text: "You are chosen, loved, and redeemed. What a beautiful reason to smile.", ref: "1 Peter 2:9" },
+        { text: "The more you praise, the more you find things to praise for.", ref: "Psalm 34:1" },
+        { text: "Your joy is a reflection of His goodness in your life.", ref: "Psalm 16:11" },
+        { text: "Be thankful for the people who love you for exactly who you are.", ref: "1 Corinthians 13:4-7" },
+        { text: "Life is a gift. Breathe it in with gratitude today.", ref: "Genesis 2:7" }
     ],
     scared: [
-        { text: "So do not fear, for I am with you; do not be dismayed, for I am your God.", ref: "Isaiah 41:10" },
-        { text: "When I am afraid, I put my trust in you.", ref: "Psalm 56:3" },
-        { text: "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.", ref: "2 Timothy 1:7" },
-        { text: "Even though I walk through the darkest valley, I will fear no evil, for you are with me.", ref: "Psalm 23:4" },
-        { text: "The Lord is my light and my salvation—whom shall I fear?", ref: "Psalm 27:1" },
-        { text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.", ref: "Philippians 4:6" },
-        { text: "Peace is what I leave with you; it is my own peace that I give you.", ref: "John 14:27" },
-        { text: "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged.", ref: "Joshua 1:9" },
-        { text: "Be strong and courageous. Do not be afraid or terrified because of them.", ref: "Deuteronomy 31:6" },
-        { text: "Cast all your anxiety on him because he cares for you.", ref: "1 Peter 5:7" },
-        { text: "The Lord is on my side; I will not fear. What can man do to me?", ref: "Psalm 118:6" },
-        { text: "God is our refuge and strength, an ever-present help in trouble.", ref: "Psalm 46:1" },
-        { text: "There is no fear in love. But perfect love drives out fear.", ref: "1 John 4:18" },
-        { text: "Do not fear, for I have redeemed you; I have summoned you by name; you are mine.", ref: "Isaiah 43:1" },
-        { text: "But now, this is what the Lord says... Do not fear, for I am with you.", ref: "Isaiah 43:1-5" },
-        { text: "The Lord will fight for you; you need only to be still.", ref: "Exodus 14:14" },
-        { text: "Trust in the Lord with all your heart and lean not on your own understanding.", ref: "Proverbs 3:5" },
-        { text: "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty.", ref: "Psalm 91:1" },
-        { text: "The Lord is my strength and my song.", ref: "Exodus 15:2" },
-        { text: "The name of the Lord is a fortified tower; the righteous run to it and are safe.", ref: "Proverbs 18:10" }
+        { text: "Fear is a liar. You are equipped with power, love, and a sound mind.", ref: "2 Timothy 1:7" },
+        { text: "When you feel afraid, trust the One who holds the stars in place.", ref: "Psalm 56:3" },
+        { text: "You don't have to see the whole staircase to take the first step.", ref: "Isaiah 41:10" },
+        { text: "God is not surprised by what you are facing. He is already in your tomorrow.", ref: "Joshua 1:9" },
+        { text: "You are braver than you feel and stronger than you think.", ref: "Deuteronomy 31:6" },
+        { text: "Don't worry about tomorrow. You are taken care of today.", ref: "Matthew 6:34" },
+        { text: "There is no shadow that His light cannot reach. You are safe.", ref: "Psalm 27:1" },
+        { text: "Let His perfect love drive out every fear in your heart today.", ref: "1 John 4:18" },
+        { text: "You are hidden in the shadow of His wings. Nothing can touch your soul.", ref: "Psalm 91:4" },
+        { text: "Quiet your mind. The Creator of the universe is fighting for you.", ref: "Exodus 14:14" },
+        { text: "You have survived 100% of your hardest days. You will survive this too.", ref: "Psalm 138:8" },
+        { text: "Your future is bright because God is already there.", ref: "Hebrews 13:8" },
+        { text: "When the waves are high, remember who the Captain of your ship is.", ref: "Mark 4:39" },
+        { text: "You are not an accident. Your life is planned and protected.", ref: "Jeremiah 1:5" },
+        { text: "Take a deep breath. You are being guided by a love that never fails.", ref: "Psalm 48:14" },
+        { text: "The name of the Lord is a strong tower. Run to it and feel safe.", ref: "Proverbs 18:10" },
+        { text: "Do not be dismayed. Your God is with you wherever you go.", ref: "Joshua 1:9" },
+        { text: "He knows your name. He knows your fears. He is holding your hand.", ref: "Isaiah 41:13" },
+        { text: "Confidence is not 'they will like me.' Confidence is 'I'll be fine if they don't.' God is with you.", ref: "Hebrews 13:6" },
+        { text: "You have a peace that passes all understanding. Let it guard your heart.", ref: "Philippians 4:7" }
     ],
     happy: [
-        { text: "This is the day the Lord has made; let us rejoice and be glad in it.", ref: "Psalm 118:24" },
-        { text: "A cheerful heart is good medicine, but a crushed spirit dries up the bones.", ref: "Proverbs 17:22" },
-        { text: "Rejo
+        { text: "Your smile is a reflection of God’s joy. Keep shining your light.", ref: "Matthew 5:16" },
+        { text: "Rejoice in this beautiful day! You were made for this moment.", ref: "Psalm 118:24" },
+        { text: "A happy heart makes a face look lovely. You are glowing today.", ref: "Proverbs 15:13" },
+        { text: "Your joy is your strength. Let it overflow to everyone you meet.", ref: "Nehemiah 8:10" },
+        { text: "You are a daughter of the King. Walk with your head held high.", ref: "Psalm 149:4" },
+        { text: "The Lord takes great delight in you. He is singing over you today!", ref: "Zephaniah 3:17" },
+        { text: "Keep a song in your heart. You have so much to be happy about.", ref: "Ephesians 5:19" },
+        { text: "Your happiness is a testimony of His goodness in your life.", ref: "Psalm 126:2" },
+        { text: "Live life to the fullest today. You are meant for abundance.", ref: "John 10:10" },
+        { text: "Laughter is medicine. Don't forget to take your dose today.", ref: "Proverbs 17:22" },
+        { text: "You are beautifully and wonderfully made. Celebrate yourself!", ref: "Psalm 139:14" },
+        { text: "The world is better because you are in it. Stay joyful.", ref: "Numbers 6:24-26" },
+        { text: "Your path is dripping with blessings. Keep moving forward with joy.", ref: "Psalm 65:11" },
+        { text: "Find joy in the journey, not just the destination.", ref: "Ecclesiastes 3:12" },
+        { text: "Good things are coming your way. Expect miracles today.", ref: "Psalm 37:4" },
+        { text: "Let your heart be light. You are deeply and truly loved.", ref: "Jeremiah 31:3" },
+        { text: "You are a masterpiece in the making. Enjoy the process.", ref: "Ephesians 2:10" },
+        { text: "Spread your joy like wildflower seeds. Watch them bloom everywhere.", ref: "Galatians 5:22-23" },
+        { text: "The Lord has done great things for you. Be glad!", ref: "Psalm 126:3" },
+        { text: "Today is a gift. That’s why it’s called the present. Enjoy it.", ref: "Psalm 16:11" }
+    ]
+};
+
+// 2. Non-Repeating Logic Pool
+let versePool = { sad: [], angry: [], thankful: [], scared: [], happy: [] };
+
+function getVerse(mood) {
+    if (versePool[mood].length === 0) {
+        versePool[mood] = [...bibleVerses[mood]];
+    }
+
+    const randomIndex = Math.floor(Math.random() * versePool[mood].length);
+    const selected = versePool[mood].splice(randomIndex, 1)[0];
+
+    // UPDATED: Added a "Reminder" title to the modal
+    document.getElementById('verse-text').innerHTML = `<span style='display:block; font-size: 0.8em; text-transform: uppercase; color: #888; margin-bottom: 10px;'>A Reminder For You:</span> "${selected.text}"`;
+    document.getElementById('verse-ref').innerText = `— ${selected.ref}`;
+    
+    const colors = { sad: '#4a90e2', angry: '#dd4b39', thankful: '#f39c12', scared: '#8e44ad', happy: '#27ae60' };
+    document.getElementById('modal-container').style.borderColor = colors[mood];
+
+    document.getElementById('verseModal').style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById('verseModal').style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById('verseModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
