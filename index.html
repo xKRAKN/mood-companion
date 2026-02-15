@@ -3,27 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Verse App</title>
+    <title>A Reminder For Her</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="button-group">
-    <button class="sad" onclick="getVerse('sad')">Sad</button>
-    <button class="angry" onclick="getVerse('angry')">Angry</button>
-    <button class="thankful" onclick="getVerse('thankful')">Thankful</button>
-    <button class="scared" onclick="getVerse('scared')">Scared</button>
-    <button class="happy" onclick="getVerse('happy')">Happy</button>
-    <button class="loved" onclick="getVerse('loved')">Loved</button>
-</div>
+<div class="container">
+    <header>
+        <h1>How are you, beautiful?</h1>
+        <p>Choose how you feel for a reminder for your life.</p>
+    </header>
+
+    <div class="button-group">
+        <button class="sad" onclick="getVerse('sad')">Sad</button>
+        <button class="angry" onclick="getVerse('angry')">Angry</button>
+        <button class="thankful" onclick="getVerse('thankful')">Thankful</button>
+        <button class="scared" onclick="getVerse('scared')">Scared</button>
+        <button class="happy" onclick="getVerse('happy')">Happy</button>
+        <button class="loved" onclick="getVerse('loved')">Loved</button>
+    </div>
 </div>
 
 <div id="verseModal" class="modal">
     <div class="modal-content" id="modal-container">
         <span class="close-btn" onclick="closeModal()">&times;</span>
-        <p id="verse-text"></p>
-        <div id="verse-ref"></div>
-        <button class="close-popup-btn" onclick="closeModal()">Amen</button>
+        <div id="verse-display">
+            <span id="reminder-label">A Reminder For You:</span>
+            <p id="verse-text"></p>
+            <div id="verse-ref"></div>
+        </div>
+        <button class="amen-btn" onclick="closeModal()">Amen</button>
     </div>
 </div>
 
