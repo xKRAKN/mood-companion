@@ -17,10 +17,14 @@
         <button class="scared" onclick="getVerse('scared')">Scared</button>
         <button class="happy" onclick="getVerse('happy')">Happy</button>
     </div>
+</div>
 
-    <div id="display-area">
-        <p id="verse-text">Click a button for a word of encouragement.</p>
+<div id="verseModal" class="modal">
+    <div class="modal-content" id="modal-container">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <p id="verse-text"></p>
         <div id="verse-ref"></div>
+        <button class="close-popup-btn" onclick="closeModal()">Amen</button>
     </div>
 </div>
 
