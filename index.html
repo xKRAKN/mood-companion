@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Reminder For Everyone</title>
+    <title>A Reminder For You</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>How are you?</h1>
-        <p>Choose how you feel for a reminder for your life.</p>
-    </header>
+    <div class="background-overlay"></div>
 
-    <div class="button-group">
-        <button class="sad" onclick="getVerse('sad')">Sad</button>
-        <button class="angry" onclick="getVerse('angry')">Angry</button>
-        <button class="thankful" onclick="getVerse('thankful')">Thankful</button>
-        <button class="scared" onclick="getVerse('scared')">Scared</button>
-        <button class="happy" onclick="getVerse('happy')">Happy</button>
-        <button class="loved" onclick="getVerse('loved')">Loved</button>
-    </div>
-</div>
+    <div class="container">
+        <header>
+            <h1>How are you?</h1>
+            <p>Choose how you feel for a reminder for your life.</p>
+        </header>
 
-<div id="verseModal" class="modal">
-    <div class="modal-content" id="modal-container">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="verse-display">
-            <span id="reminder-label">A Reminder For You:</span>
-            <p id="verse-text"></p>
-            <div id="verse-ref"></div>
+        <div class="button-group">
+            <button class="sad" onclick="getVerse('sad')">Sad</button>
+            <button class="angry" onclick="getVerse('angry')">Angry</button>
+            <button class="thankful" onclick="getVerse('thankful')">Thankful</button>
+            <button class="scared" onclick="getVerse('scared')">Scared</button>
+            <button class="happy" onclick="getVerse('happy')">Happy</button>
+            <button class="loved" onclick="getVerse('loved')">Loved</button>
         </div>
-        <button class="amen-btn" onclick="closeModal()">Amen</button>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <div id="verseModal" class="modal">
+        <div class="modal-content" id="modal-container">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="verse-display">
+                <span id="reminder-label">A Reminder For You:</span>
+                <p id="verse-text"></p>
+                <div id="verse-ref"></div>
+            </div>
+            <button class="amen-btn" onclick="closeModal()">Amen</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
