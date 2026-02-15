@@ -134,6 +134,7 @@ const bibleVerses = {
 };
 
 // Logic to prevent repetition
+// Logic to prevent repetition - Ensure 'loved' is in this list!
 let versePool = { sad: [], angry: [], thankful: [], scared: [], happy: [], loved: [] };
 
 function getVerse(mood) {
