@@ -1,4 +1,4 @@
-// We store the original data here
+// 1. The Full Verse Database (20 per category)
 const bibleVerses = {
     sad: [
         { text: "The Lord is close to the brokenhearted and saves those who are crushed in spirit.", ref: "Psalm 34:18" },
@@ -91,56 +91,4 @@ const bibleVerses = {
     happy: [
         { text: "This is the day the Lord has made; let us rejoice and be glad in it.", ref: "Psalm 118:24" },
         { text: "A cheerful heart is good medicine, but a crushed spirit dries up the bones.", ref: "Proverbs 17:22" },
-        { text: "Rejoice in the Lord always. I will say it again: Rejoice!", ref: "Philippians 4:4" },
-        { text: "The Lord has done great things for us, and we are filled with joy.", ref: "Psalm 126:3" },
-        { text: "You make known to me the path of life; you will fill me with joy in your presence.", ref: "Psalm 16:11" },
-        { text: "The joy of the Lord is your strength.", ref: "Nehemiah 8:10" },
-        { text: "May the God of hope fill you with all joy and peace as you trust in him.", ref: "Romans 15:13" },
-        { text: "Your statutes are my heritage forever; they are the joy of my heart.", ref: "Psalm 119:111" },
-        { text: "Light shines on the righteous and joy on the upright in heart.", ref: "Psalm 97:11" },
-        { text: "Though you have not seen him, you love him; and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy.", ref: "1 Peter 1:8" },
-        { text: "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness.", ref: "Galatians 5:22" },
-        { text: "Shout for joy to the Lord, all the earth.", ref: "Psalm 100:1" },
-        { text: "Go, eat your food with gladness, and drink your wine with a joyful heart.", ref: "Ecclesiastes 9:7" },
-        { text: "My lips will shout for joy when I sing praise to you.", ref: "Psalm 71:23" },
-        { text: "You have turned my mourning into joyful dancing.", ref: "Psalm 30:11" },
-        { text: "I have told you this so that my joy may be in you and that your joy may be complete.", ref: "John 15:11" },
-        { text: "Blessed are the people whose God is the Lord.", ref: "Psalm 144:15" },
-        { text: "I will be glad and rejoice in your love, for you saw my affliction.", ref: "Psalm 31:7" },
-        { text: "Ask and you will receive, and your joy will be complete.", ref: "John 16:24" },
-        { text: "The righteous cry out, and the Lord hears them; he delivers them from all their troubles.", ref: "Psalm 34:17" }
-    ]
-};
-
-// This object will hold our "unused" verses for each mood
-let versePool = {
-    sad: [],
-    angry: [],
-    thankful: [],
-    scared: [],
-    happy: []
-};
-
-function getVerse(mood) {
-    // 1. If the pool for this mood is empty, refill it with a fresh copy of the verses
-    if (versePool[mood].length === 0) {
-        versePool[mood] = [...bibleVerses[mood]];
-    }
-
-    // 2. Pick a random index from the current pool
-    const randomIndex = Math.floor(Math.random() * versePool[mood].length);
-    
-    // 3. Remove (splice) that verse from the pool so it can't be picked again
-    const selected = versePool[mood].splice(randomIndex, 1)[0];
-
-    // 4. Update the UI
-    document.getElementById('verse-text').innerText = `"${selected.text}"`;
-    document.getElementById('verse-ref').innerText = `— ${selected.ref}`;
-    
-    // 5. Change UI colors dynamically
-    const colors = { sad: '#4a90e2', angry: '#dd4b39', thankful: '#f39c12', scared: '#8e44ad', happy: '#27ae60' };
-    document.getElementById('display-area').style.borderColor = colors[mood];
-
-    // Optional: Log how many are left in the console
-    console.log(`${mood.toUpperCase()} verses remaining in this round: ${versePool[mood].length}`);
-}
+        { text: "Rejo
