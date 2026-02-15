@@ -1,7 +1,6 @@
-// 1. Personalized Life-Reminder Database
 const bibleVerses = {
     sad: [
-        { text: "He heals the brokenhearted and binds up their wounds. You are never alone in your pain.", ref: "Psalm 147:3" },
+        { text: "The Lord is close to the brokenhearted and saves those who are crushed in spirit. You are never alone in your pain.", ref: "Psalm 34:18" },
         { text: "Your current situation is not your final destination. Better days are coming.", ref: "Jeremiah 29:11" },
         { text: "You are allowed to be both a masterpiece and a work in progress.", ref: "Philippians 1:6" },
         { text: "The Lord is close to you when your heart is heavy. Let Him carry the weight today.", ref: "Psalm 34:18" },
@@ -109,13 +108,36 @@ const bibleVerses = {
         { text: "Spread your joy like wildflower seeds. Watch them bloom everywhere.", ref: "Galatians 5:22-23" },
         { text: "The Lord has done great things for you. Be glad!", ref: "Psalm 126:3" },
         { text: "Today is a gift. That’s why it’s called the present. Enjoy it.", ref: "Psalm 16:11" }
+    ],
+    loved: [
+        { text: "I have loved you with an everlasting love; I have drawn you with unfailing kindness.", ref: "Jeremiah 31:3" },
+        { text: "See what great love the Father has lavished on us, that we should be called children of God!", ref: "1 John 3:1" },
+        { text: "For the Lord your God is with you; He takes great delight in you and will quiet you with His love.", ref: "Zephaniah 3:17" },
+        { text: "Neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God.", ref: "Romans 8:39" },
+        { text: "You are precious and honored in His sight, and He loves you deeply.", ref: "Isaiah 43:4" },
+        { text: "God is love. Whoever lives in love lives in God, and God in them.", ref: "1 John 4:16" },
+        { text: "Give thanks to the God of heaven, for His steadfast love endures forever.", ref: "Psalm 136:26" },
+        { text: "You are fearfully and wonderfully made. His eyes have never left you.", ref: "Psalm 139:14" },
+        { text: "As the Father has loved me, so have I loved you. Now remain in my love.", ref: "John 15:9" },
+        { text: "But God demonstrates his own love for us in this: While we were still sinners, Christ died for us.", ref: "Romans 5:8" },
+        { text: "Greater love has no one than this: to lay down one’s life for one’s friends. You are His friend.", ref: "John 15:13" },
+        { text: "The Lord your God is in your midst, a mighty one who will save; He will rejoice over you with gladness.", ref: "Zephaniah 3:17" },
+        { text: "You did not choose me, but I chose you. You are hand-picked by the Creator.", ref: "John 15:16" },
+        { text: "Cast all your anxieties on Him, because He cares for you personally.", ref: "1 Peter 5:7" },
+        { text: "His banner over you is love. You are protected and cherished.", ref: "Song of Solomon 2:4" },
+        { text: "For God so loved the world that he gave his one and only Son. That love includes you.", ref: "John 3:16" },
+        { text: "The Lord appeared to us in the past, saying: 'I have loved you with an everlasting love.'", ref: "Jeremiah 31:3" },
+        { text: "Keep yourselves in God’s love as you wait for the mercy of our Lord Jesus Christ.", ref: "Jude 1:21" },
+        { text: "May you have the power to understand how wide, how long, how high, and how deep His love is.", ref: "Ephesians 3:18" },
+        { text: "You are a chosen people, a royal priesthood, a holy nation, God’s special possession.", ref: "1 Peter 2:9" }
     ]
 };
 
-// 2. Non-Repeating Logic Pool
-let versePool = { sad: [], angry: [], thankful: [], scared: [], happy: [] };
+// Logic to prevent repetition
+let versePool = { sad: [], angry: [], thankful: [], scared: [], happy: [], loved: [] };
 
 function getVerse(mood) {
+    // Refill the deck if empty
     if (versePool[mood].length === 0) {
         versePool[mood] = [...bibleVerses[mood]];
     }
@@ -123,13 +145,22 @@ function getVerse(mood) {
     const randomIndex = Math.floor(Math.random() * versePool[mood].length);
     const selected = versePool[mood].splice(randomIndex, 1)[0];
 
-    // UPDATED: Added a "Reminder" title to the modal
-    document.getElementById('verse-text').innerHTML = `<span style='display:block; font-size: 0.8em; text-transform: uppercase; color: #888; margin-bottom: 10px;'>A Reminder For You:</span> "${selected.text}"`;
+    // Update Modal Content
+    document.getElementById('verse-text').innerText = `"${selected.text}"`;
     document.getElementById('verse-ref').innerText = `— ${selected.ref}`;
     
-    const colors = { sad: '#4a90e2', angry: '#dd4b39', thankful: '#f39c12', scared: '#8e44ad', happy: '#27ae60' };
+    // Set dynamic border color
+    const colors = { 
+        sad: '#4a90e2', 
+        angry: '#dd4b39', 
+        thankful: '#f39c12', 
+        scared: '#8e44ad', 
+        happy: '#27ae60',
+        loved: '#ff85a2' 
+    };
     document.getElementById('modal-container').style.borderColor = colors[mood];
 
+    // Show the Pop-up
     document.getElementById('verseModal').style.display = "block";
 }
 
@@ -137,6 +168,7 @@ function closeModal() {
     document.getElementById('verseModal').style.display = "none";
 }
 
+// Close if clicked outside
 window.onclick = function(event) {
     let modal = document.getElementById('verseModal');
     if (event.target == modal) {
